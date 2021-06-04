@@ -5,10 +5,16 @@ import com.example.restcriteriaspringboot.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+//We have annotated the interface with @Repository annotation.
+// This tells Spring to bootstrap the repository during a component scan
+@Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
+//    In the above code, StudentRepository interface extends JpaRepository
+//    which provides below methods to deal with database operations
 
     @Query(value = "select s.* from student s " +
             "join student_course s2c on s.id = s2c.student_id " +

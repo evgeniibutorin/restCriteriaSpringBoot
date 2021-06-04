@@ -2,6 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<!--    The spring-boot-starter-parent  allow you to manage the following things for multiple child projects and modules:-->
+<!--    Configuration - Java Version and Other Properties-->
+<!--    Dependency Management - Version of dependencies-->
+<!--    Default Plugin Configuration-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -17,6 +21,9 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+        <!-- We added the spring-boot-starter-data-jpa dependency.
+        This pulls all the spring-data-jpa dependencies and adds Hibernate libraries
+         because most applications use Hibernate as a JPA implementation.-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -51,6 +58,10 @@
             <version>5.3.7</version>
         </dependency>
 
+
+        <!-- We added the spring-boot-starter-web dependency,
+        it will by default pull all the commonly used libraries while developing Spring MVC applications,
+        such as spring-webmvc, jackson-json, validation-api, and Tomcat.-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
